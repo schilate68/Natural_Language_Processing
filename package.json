@@ -16,9 +16,7 @@
     "axios": "^0.26.0",
     "dotenv": "^8.6.0",
     "express": "^4.17.2",
-    "jest-fetch-mock": "^3.0.3",
-    "webpack": "^4.35.3",
-    "webpack-cli": "^3.3.5"
+    "jest-fetch-mock": "^3.0.3"
   },
   "devDependencies": {
     "@babel/core": "^7.17.2",
@@ -39,6 +37,8 @@
     "sass-loader": "^10.2.1",
     "style-loader": "^2.0.0",
     "terser-webpack-plugin": "^5.3.1",
+    "webpack": "^4.35.3",
+    "webpack-cli": "^3.3.12",
     "webpack-dev-server": "^3.11.2",
     "workbox-webpack-plugin": "^6.1.5"
   }

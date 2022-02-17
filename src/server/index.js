@@ -18,8 +18,8 @@ app.get('/', function (req, res) {
 })
 
 // designates what port the app will listen to for incoming requests
-app.listen(8080, function () {
-    console.log('Example app listening on port 8080!')
+app.listen(8081, function () {
+    console.log('Example app listening on port 8081!')
 })
 
 app.get('/test', function (req, res) {
@@ -27,19 +27,27 @@ app.get('/test', function (req, res) {
 })
 
 
-//POST requests
+//POST request API Meaning Cloud
+app.post('/text', function (req, res) {
+    console.log("In POST text");
+    const textUrl = req.body;
+    axios
+        .post('https://api.meaningcloud.com/sentiment-2.1', {
+            key: process.env.API_KEY,
+            txt: "You are sure about that?",
+            lang: "en",
+            tt: "a"
+        })
+        .then(res => {
+            console.log(`statusCode: ${res.status}`)
+            console.log(res.data)
+        })
+        .catch(error => {
+            console.error(error)
+        })
 
-axios
-    .post('https://api.meaningcloud.com/topics-2.0', {
-        key: process.env.API_KEY,
-        txt: "The football match goals",
-        lang: "en",
-        tt: "a"
-    })
-    .then(res => {
-        console.log(`statusCode: ${res.status}`)
-        console.log(res.data)
-    })
-    .catch(error => {
-        console.error(error)
-    })
+})
+
+
+
+
