@@ -6,7 +6,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node src/server/index.js",
     "build-prod": "webpack --config webpack.prod.js",
-    "build-dev": "webpack-dev-server  --config webpack.dev.js --open"
+    "build-dev": "webpack-dev-server --config webpack.dev.js --open"
   },
   "keywords": [],
   "author": "",
@@ -37,9 +37,9 @@
     "sass-loader": "^10.2.1",
     "style-loader": "^2.0.0",
     "terser-webpack-plugin": "^5.3.1",
-    "webpack": "^4.35.3",
+    "webpack": "^4.36.0",
     "webpack-cli": "^3.3.12",
-    "webpack-dev-server": "^3.11.2",
+    "webpack-dev-server": "^3.11.3",
     "workbox-webpack-plugin": "^6.1.5"
   }
 }
