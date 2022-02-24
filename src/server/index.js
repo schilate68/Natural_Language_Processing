@@ -28,10 +28,11 @@ app.get('/test', function (req, res) {
 app.post('/text', function (req, res) {
     console.log("In POST text");
     const textUrl = req.body;
+    console.log(textUrl.url);
     axios
         .post('https://api.meaningcloud.com/sentiment-2.1', {
             key: process.env.API_KEY,
-            txt: "You are sure about that?",
+            txt: `${textUrl.url}`,
             lang: "en",
             tt: "a"
         })
