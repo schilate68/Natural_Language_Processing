@@ -6,17 +6,17 @@ function handleSubmit(event) {
     Client.checkForName(formText)
     console.log(formText);
 
-    postData('/text', { url: formText })
+    /* postData('/text', { url: formText })
         .then(res => {
-            document.getElementById('results').innerHTML = res.message
+            document.getElementById('results').innerHTML = res.agreement
         });
-
+ */
     console.log("::: Form Submitted :::")
-    /* fetch('http://localhost:8081/test')
+    fetch('http://localhost:8081/test')
         .then(res => res.json())
         .then(function (res) {
             document.getElementById('results').innerHTML = res.message
-        }) */
+        })
 }
 
 export { handleSubmit }
@@ -36,7 +36,7 @@ const postData = async (url = '', data = {}) => {
 
     try {
         const newData = await response.json();
-        //console.log(newData);
+        console.log(newData);
         //return newData;
     } catch (error) {
         console.log("error", error);

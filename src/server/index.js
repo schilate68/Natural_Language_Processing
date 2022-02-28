@@ -36,9 +36,10 @@ app.post('/text', function (req, res) {
             lang: "en",
             tt: "a"
         })
-        .then(res => {
+        .then(resp => {
             console.log(`statusCode: ${res.status}`)
-            console.log(res.data)
+            console.log(resp.data);
+            res.send(resp);
         })
         .catch(error => {
             console.error(error)
