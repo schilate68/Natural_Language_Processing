@@ -3,6 +3,7 @@ const express = require('express')
 const dotenv = require('dotenv')
 const mockAPIResponse = require('./mockAPI.js')
 const axios = require('axios')
+const { response } = require('express')
 dotenv.config();
 const app = express()
 
@@ -41,6 +42,28 @@ app.post('/text', function (req, res) {
             console.log(resp.data);
             res.send(resp);
         })
+        .catch(error => {
+            console.error(error)
+        })
+
+})
+
+app.post('/test', function (req, res) {
+    console.log("In POST test API");
+    console.log(process.env.API_KEY);
+    axios
+        .post('https://api.meaningcloud.com/sentiment-2.1', {
+            key: process.env.API_KEY,
+            url: 'https://blog.logrocket.com/complete-guide-flutter-architecture/',
+            lang: "en",
+            tt: "a"
+        })
+        .then(res => ({
+            status: res.status,
+            body: res.data
+
+        }))
+        .then(({ status, body }) => console.log(status, body))
         .catch(error => {
             console.error(error)
         })

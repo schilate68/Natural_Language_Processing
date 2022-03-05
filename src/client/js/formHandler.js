@@ -6,9 +6,9 @@ function handleSubmit(event) {
     Client.checkForName(formText)
     console.log(formText);
 
-    postData('http://localhost:8081/text', { url: formText })
+    postData('http://localhost:8081/test', { url: formText })
         .then(res => {
-            document.getElementById('results').innerHTML = res.agreement
+            document.getElementById('results').innerHTML = res
         });
 
     console.log("::: Form Submitted :::")
@@ -24,6 +24,8 @@ export { handleSubmit }
 
 const postData = async (url = '', data = {}) => {
     console.log("in postData");
+    console.log(JSON.stringify(data));
+
     const response = await fetch(url, {
         method: 'POST',
         credentials: 'same-origin',
