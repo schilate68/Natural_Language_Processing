@@ -16,7 +16,8 @@
     "axios": "^0.26.0",
     "dotenv": "^8.6.0",
     "express": "^4.17.2",
-    "jest-fetch-mock": "^3.0.3"
+    "jest-fetch-mock": "^3.0.3",
+    "meaning-cloud": "^1.1.10"
   },
   "devDependencies": {
     "@babel/core": "^7.17.2",

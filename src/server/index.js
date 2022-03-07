@@ -5,9 +5,10 @@ const mockAPIResponse = require('./mockAPI.js')
 const axios = require('axios')
 const { response } = require('express')
 dotenv.config();
+const https = require("https");
+const MeaningCloud = require('meaning-cloud');
 const app = express()
 
-console.log(process.env.API_KEY);
 
 app.use(express.static('dist'))
 
@@ -51,12 +52,12 @@ app.post('/text', function (req, res) {
 app.post('/test', function (req, res) {
     console.log("In POST test API");
     console.log(process.env.API_KEY);
+
     axios
         .post('https://api.meaningcloud.com/sentiment-2.1', {
             key: process.env.API_KEY,
             url: 'https://blog.logrocket.com/complete-guide-flutter-architecture/',
-            lang: "en",
-            tt: "a"
+            lang: "en"
         })
         .then(res => ({
             status: res.status,
